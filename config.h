@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Monospace:pixelsize=18:antialias=true:autohint=true";
+static char *font = "Monospace:pixelsize=24:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -95,33 +95,37 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+    [0] = "#323437", /*Black*/
+    [8] = "#7c8f8f",
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	[1] = "#ff5454", /*Red*/
+	[9] = "#ff5189",
+
+	[2] = "#00ff33", /*Green*/
+	[10] = "#00ff66",
+
+	[3] = "#ffb000", /*Yellow*/
+	[11] = "#ffcc00",
+
+	[4] = "#6495ED", /*Blue*/
+	[12] = "#0096ff",
+
+	[5] = "#F653A6", /*Magenta*/
+	[13] = "#FF1DCE",
+
+	[6] = "#00ffff", /*Cyan*/
+	[14] = "#40E0D0",
+
+	[7] = "#a1aab8", /*White*/
+	[15] = "#e2637f",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+    [256] = "#ff5454", 
+    [257] = "#f8f8f2",
+    [258] = "#080808",
+    [259] = "#eeeeee",
 };
 
 
@@ -129,8 +133,8 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
+unsigned int defaultbg = 258;
+unsigned int defaultfg = 259;
 unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
